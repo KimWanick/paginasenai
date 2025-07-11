@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI - Sobre, Cursos e Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos Globais e Reset Básico */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Cor de fundo clara para o corpo da página */
+            color: #333;
+            /* Requisito: Layout com largura máxima de 1200px e centralizado */
+            max-width: 1200px; /* Largura máxima */
+            margin-left: auto; /* Centraliza o body */
+            margin-right: auto; /* Centraliza o body */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra para o layout total */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Estilos do Cabeçalho (Header / Menu) --- */
+        .header {
+            background-color: #004080; /* Requisito: Fundo azul escuro (#004080) */
+            color: white; /* Requisito: Texto branco */
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            border-top-left-radius: 8px; /* Arredondar topo do layout */
+            border-top-right-radius: 8px; /* Arredondar topo do layout */
+        }
+
+        .header .logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+
+        .header .nav-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 50px;
+        }
+
+        .header .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .header .nav-menu a {
+            color: white; /* Requisito: Texto branco */
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .header .nav-menu a:hover {
+            color: #ffc107; /* Amarelo no hover */
+        }
+
+        /* --- Estilos do Conteúdo Principal (Caixa Central) --- */
+        .main-container {
+            /* width: 80%; Removido pois a largura máxima do body já controla */
+            /* max-width: 960px; Removido pois a largura máxima do body já controla */
+            margin: 0px auto; /* Centraliza o container sem margem superior, pois o header já tem a margem do body */
+            background-color: #fff; /* Fundo branco para o conteúdo */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para o container */
+            border-bottom-left-radius: 8px; /* Requisito: Bordas arredondadas (completando o body) */
+            border-bottom-right-radius: 8px; /* Requisito: Bordas arredondadas (completando o body) */
+            /* Remover o box-shadow e border-radius daqui se o body já for o container principal arredondado */
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #003366; /* Azul do SENAI */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* --- Estilos da Seção Sobre --- */
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* --- Estilos da Seção Cursos --- */
+        .course-list .course-item {
+            background-color: #eeeeee; /* Requisito: Fundo cinza claro (#eeeeee) */
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-list .course-item:hover {
+            background-color: #d0d0d0; /* Escurece no hover */
+        }
+
+        /* --- Estilos da Seção Contato --- */
+        .contact-section {
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li i {
+            color: #003366; /* Cor do ícone */
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- Estilos do Rodapé (Footer) --- */
+        .footer {
+            background-color: #004080; /* Requisito: Fundo azul escuro (#004080) */
+            color: white; /* Requisito: Texto branco */
+            text-align: center; /* Requisito: Texto centralizado */
+            padding: 20px 0;
+            font-size: 0.9em;
+            margin-top: 0; /* Ajuste para encaixar com o main-container */
+            border-bottom-left-radius: 8px; /* Arredondar parte inferior do rodapé */
+            border-bottom-right-radius: 8px; /* Arredondar parte inferior do rodapé */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">SENAI</div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+
+        <section id="sobre" class="about-section">
+            <h2 class="section-title">Sobre o SENAI</h2>
+            <p>O SENAI é uma das principais instituições de educação profissional do Brasil. Nossa missão é preparar os jovens e trabalhadores para o mercado de trabalho com foco em inovação, tecnologia e indústria 4.0.</p>
+        </section>
+
+        <section id="cursos" class="course-section">
+            <h2 class="section-title">Cursos Técnicos</h2>
+            <ul class="course-list">
+                <li class="course-item">Técnico em Desenvolvimento de Sistemas</li>
+                <li class="course-item">Técnico em Mecatrônica</li>
+                <li class="course-item">Técnico em Eletrotécnica</li>
+                <li class="course-item">Técnico em Logística</li>
+                <li class="course-item">Técnico em Administração</li>
+            </ul>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <h2 class="section-title">Contato</h2>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> Unidade SENAI Central - Rua da Indústria, 123, Centro</li>
+                <li><i class="fas fa-phone"></i> (11) 4002-8922</li>
+                <li><i class="fas fa-envelope"></i> atendimento@senaibrasil.com.br</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        © 2025 SENAI - Serviço Nacional de Aprendizagem Industrial
+    </footer>
+
+</body>
+</html>''
